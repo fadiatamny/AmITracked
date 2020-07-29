@@ -1,0 +1,85 @@
+/* Dropdown Button */
+.dropbtn {
+    background-color: #2792daa4;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    width: 200px;
+}
+  
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #297fb9be;
+}
+
+.dropdown {
+    position: relative;
+    display: grid;
+    width: 200px;
+}
+
+.dropdown-content {
+    display: none;
+    position: relative;
+    background-color: #f1f1f1;
+    z-index: 1;
+    width: 200px;
+    place-items: center;
+}
+
+.dropdown-content a{
+    display: block;
+    color: #000013;
+    padding: 12px 16px;
+    font-size: 14px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.dropdown-content a:hover{
+    display: block;
+    color: #109ada;
+    padding: 12px 16px;
+    font-size: 14px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.show {
+    display:table;
+}
+
+.divider{
+    display: grid;
+    place-items: center;
+    border-bottom: 2px solid #297fb9ee;
+    margin-bottom: 5%;
+}
+
+.divider.tracker{
+    margin-top: 10px;
+}
+
+.divider.tracker p{
+    font-size: 18px;
+}
+
+.divider.current p{
+    font-size: 16px;
+}
+
+.currentTrackersList{
+    display: grid;
+    place-items: center;    
+}
+
+.currentTrackersList p {
+    font-size: 14px;
+}
+
+body{
+    display: grid;
+    place-items: center;
+}
