@@ -1,9 +1,9 @@
 {
     "manifest_version": 2,
-    "name": "Test Extension",
-    "version": "0.1",
+    "name": "tracker-FadiAtamny_206793275-TalAdivi_204329775.zip.",
+    "version": "1.0",
     "browser_action": {
-        "default_title": "Test Extension",
+        "default_title": "Am I Tracked",
         "default_icon": "icon.png",
         "default_popup": "popup.html"
     },

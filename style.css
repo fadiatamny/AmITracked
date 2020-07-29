@@ -14,10 +14,12 @@
     background-color: #297fb9be;
 }
 
-.dropdown {
+.dropdownDiv {
     position: relative;
     display: grid;
-    width: 200px;
+    max-height: 150px;
+    overflow: scroll;
+    overflow-x: hidden;
 }
 
 .dropdown-content {

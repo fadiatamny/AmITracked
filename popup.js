@@ -83,15 +83,13 @@ const fetchCurrentSiteTrackers = (sites) => {
     //Here we have just the html and not DOM structure so we parse it to a dom object and search for script tags.
     const head = new DOMParser().parseFromString(result[0].head, 'text/html');
     const body = new DOMParser().parseFromString(result[0].body, 'text/html');
-    const scripts = [...head.head.querySelectorAll('script'), ...body.body.querySelectorAll('script')];
+    const scripts = [...head.querySelectorAll('script'), ...body.querySelectorAll('script')];
     scripts.forEach(element => {
       sites.forEach(site => { //check if the current script tag meets any of the included trackers we are looking for.
         if (element.innerText.includes(site.trackerDomain)) {
-          console.log(site.name);
           if (!trackers.includes(site.name))
             trackers.push(site.name);
         }
-
       });
     });
 
@@ -118,11 +116,7 @@ const handleLoading = (sites) => {
   }
 };
 
-window.onload = () => {
-  chrome.storage.local.get(['sites'], res => handleLoading(res.sites));
-};
-
-
+//when clicking away from a dropdown then it collapses all the dropdowns
 const closeDropDowns = () => {
   const dropdowns = document.getElementsByClassName('dropdown-content');
   for (let i = 0; i < dropdowns.length; i++) {
@@ -132,9 +126,12 @@ const closeDropDowns = () => {
   }
 }
 
-//when clicking away from a dropdown then it collapses all the dropdowns
+window.onload = () => {
+  chrome.storage.local.get(['sites'], res => handleLoading(res.sites));
+};
+
 window.onclick = (event) => {
   if (!event.target.matches('.dropbtn')) {
     closeDropDowns();
   }
-}
+};

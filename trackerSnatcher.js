@@ -20,7 +20,7 @@ const process = (sites) => {
   else
     sites = JSON.parse(sites);
 
-  let hostname = new URL(location.href).hostname;
+  const hostname = new URL(location.href).hostname;
 
   const scripts = document.querySelectorAll('script');
   scripts.forEach(element => {
